@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;code&apos; to &apos;framework&apos;&#x0D;&#x0A;- Original project: &apos;Das.persistencia&apos;&#x0D;&#x0A;- Original element: &apos;Das.persistencia/src/code&apos;&#x0D;&#x0A;- Renamed element: &apos;Das.persistencia/src/framework&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;code&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;code" name="framework" qualified="false" references="true" stamp="1371303838568" textual="false" version="1.0"/>
+</session>
