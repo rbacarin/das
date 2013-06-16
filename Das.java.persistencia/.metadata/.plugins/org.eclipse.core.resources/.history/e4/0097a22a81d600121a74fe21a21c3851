@@ -1,0 +1,18 @@
+public class Aluno extends Persistable{
+	
+	public Aluno(String nome, int RA)
+	{
+		nomeAluno = nome;
+		super.setID(RA);
+	}
+	
+	public Aluno(String nome, int RA)
+	{
+		nomeAluno = nome;
+		super.setID(RA);
+	}
+		
+	public String nomeAluno;
+	public int RA;
+	public static int RAGen = 1;
+}

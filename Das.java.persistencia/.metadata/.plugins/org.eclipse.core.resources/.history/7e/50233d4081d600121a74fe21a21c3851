@@ -1,0 +1,18 @@
+
+
+public class Main {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		static int RAGen = 1;
+		
+		ObjSerializer o = new ObjSerializer();
+		o.Save(save)
+
+	}
+
+	
+}
+

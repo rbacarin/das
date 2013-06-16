@@ -1,0 +1,6 @@
+
+public abstract class Serializer {
+	public abstract <T> boolean Save(T save);
+	public abstract <T> T Get<T>(String key);
+	
+}

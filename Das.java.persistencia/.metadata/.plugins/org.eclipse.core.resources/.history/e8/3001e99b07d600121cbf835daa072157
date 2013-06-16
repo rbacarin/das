@@ -1,0 +1,4 @@
+	public abstract class IPersistence {
+
+		public abstract <T> boolean Delete(T value);
+	}

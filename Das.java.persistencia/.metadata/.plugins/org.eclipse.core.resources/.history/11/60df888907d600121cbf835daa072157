@@ -1,0 +1,7 @@
+	public abstract class IPersistence {
+
+		public void Delete(T value) {
+
+		}
+
+	}

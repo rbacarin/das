@@ -1,0 +1,5 @@
+	public interface IPersistence {
+
+		public abstract <T> boolean Delete(T key);
+
+	}

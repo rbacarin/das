@@ -1,0 +1,5 @@
+	public interface IPersistence {
+
+		public abstract boolean Delete(String key);
+
+	}

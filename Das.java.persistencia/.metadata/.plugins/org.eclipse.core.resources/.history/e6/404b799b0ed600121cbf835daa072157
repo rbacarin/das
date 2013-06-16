@@ -1,0 +1,33 @@
+	public class ThePersistant extends IPersistence {
+
+		/*
+		 * (non-javadoc)
+		 */
+		private Serializer PersistenceEngine;
+
+		public ThePersistant() {
+			this.PersistenceEngine = new ObjSerializer();
+		}
+		
+		public ThePersistant(Serializer engine){
+			this.PersistenceEngine=engine;
+		}
+
+		@Override
+		public <T> boolean Delete(T key) {
+			PersistenceEngine.Delete(key);
+			return false;
+		}
+
+		@Override
+		public <T> T Get(String key) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		@Override
+		public <T> boolean Save(T value) {
+			// TODO Auto-generated method stub
+			return false;
+		}
+	}

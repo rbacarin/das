@@ -1,0 +1,9 @@
+	public interface IPersistence {
+
+		
+		//public abstract<T> T Get(String key);
+
+		//public abstract<T> boolean Delete(T key);
+		
+		//
+	}

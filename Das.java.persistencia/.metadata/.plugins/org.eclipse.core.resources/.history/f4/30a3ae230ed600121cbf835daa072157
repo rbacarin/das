@@ -1,0 +1,48 @@
+	public class ThePersistant extends IPersistence {
+
+		/*
+		 * (non-javadoc)
+		 */
+		private Serializer serializer;
+
+		@Override
+		public <T> boolean Delete(T key) {
+			// TODO Auto-generated method stub
+			return false;
+		}
+
+		@Override
+		public <T> T Get(String key) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		@Override
+		public <T> boolean Save(T value) {
+			// TODO Auto-generated method stub
+			return false;
+		}
+
+		/**
+		 * Getter of the property <tt>serializer</tt>
+		 * 
+		 * @return Returns the serializer.
+		 * 
+		 */
+
+		public Serializer getSerializer() {
+			return serializer;
+		}
+
+		/**
+		 * Setter of the property <tt>serializer</tt>
+		 * 
+		 * @param serializer
+		 *            The serializer to set.
+		 * 
+		 */
+		public void setSerializer(Serializer serializer) {
+			this.serializer = serializer;
+		}
+
+	}

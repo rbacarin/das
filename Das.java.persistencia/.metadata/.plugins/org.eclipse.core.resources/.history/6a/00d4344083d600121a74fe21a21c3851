@@ -1,0 +1,21 @@
+
+
+public class Main {
+	public static int RAGen = 1;
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		ObjSerializer o = new ObjSerializer();
+		ThePersistant tp = new ThePersistant(o);
+		Aluno alunoInst = new Aluno("Robson", RAGen++);
+		tp.Save(alunoInst);
+		
+		tp.Get("Aluno", String.valueOf(alunoInst.RA));
+
+	}
+
+	
+}
+

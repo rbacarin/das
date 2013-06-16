@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="srcClassDiagram" id="{UMLID=_wupikNYEEeKeiO3ldqh1qQ,JavaID=}" metadata="uml2-1.0" initialized="true" tag="10" key="3230303730363239204461732E70657273697374656E636961">
+  <children xsi:type="editmodel:ClassEditModel" name="IPersistence" location="868,168" size="117,101" timstampe="189" stereotype="" id="{UMLID=_XnVYgNYHEeKeiO3ldqh1qQ,JavaID=/IPersistence}" runTimeClassModel="Save(),Delete(),Get(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="91,54">
+      <children xsi:type="editmodel:MethodEditModel" name="Delete" size="86,16" id="{UMLID=_ehAmENYHEeKeiO3ldqh1qQ,JavaID=/IPersistence#Delete()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Get" size="78,16" id="{UMLID=_mcIpkNYHEeKeiO3ldqh1qQ,JavaID=/IPersistence#Get(Ljava.lang.String;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Save" size="91,16" id="{UMLID=_rmRMINYHEeKeiO3ldqh1qQ,JavaID=/IPersistence#Save()}"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showMethods="true" showAttributes="true" showLiterals="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Persistable" location="868,42" size="110,101" timstampe="14" stereotype="" id="{UMLID=_zS3EYNYHEeKeiO3ldqh1qQ,JavaID=/Persistable}" runTimeClassModel="setID(I),getID(),ID">
+    <children xsi:type="editmodel:CompartmentEditModel" size="38,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="ID" size="38,16" id="{UMLID=_3Upe0NYHEeKeiO3ldqh1qQ}"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="64,36">
+      <children xsi:type="editmodel:MethodEditModel" name="getID" size="64,16" id="{UMLID=_3aMtMNYHEeKeiO3ldqh1qQ,JavaID=/Persistable#getID()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setID" size="64,16" id="{UMLID=_3aKQ8NYHEeKeiO3ldqh1qQ,JavaID=/Persistable#setID(I)}"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showMethods="true" showAttributes="true" showLiterals="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ThePersistant" location="62,42" size="154,221" timstampe="344" stereotype="" id="{UMLID=_BK7ncNYIEeKeiO3ldqh1qQ,JavaID=/ThePersistant}" runTimeClassModel="ThePersistant(LSerializer;),Save(),Delete(),PersistenceEngine,ThePersistant(),Get(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel">
+      <children xsi:type="editmodel:AttributeEditModel" name="PersistenceEngine" size="79,21" id="{UMLID=_gToLgNYNEeKeiO3ldqh1qQ}"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="91,54">
+      <children xsi:type="editmodel:MethodEditModel" name="ThePersistant" size="91,16" id="{UMLID=_Gst1ANYIEeKeiO3ldqh1qQ,JavaID=/ThePersistant#ThePersistant()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="ThePersistant" size="106,16" id="{UMLID=_eXahAdYOEeKeiO3ldqh1qQ,JavaID=/ThePersistant#ThePersistant(LSerializer;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Get" size="78,16" id="{UMLID=_GsqxsNYIEeKeiO3ldqh1qQ,JavaID=/ThePersistant#Get(Ljava.lang.String;)}"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" name="PersistenceEngine" size="2,1" description="Association" autoLocated="true" id="{UMLID=_gTnkcNYNEeKeiO3ldqh1qQ}" source="//@children.2" target="//@children.3" targetEnd="//@children.2/@sourceConnections.0/@children.1" label="//@children.2/@sourceConnections.0/@children.2" sourceEnd="//@children.2/@sourceConnections.0/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="thePersistant" location="154,68" id="{UMLID=_gToykNYNEeKeiO3ldqh1qQ}" attachSource="true" multiplicityLabel="//@children.2/@sourceConnections.0/@children.0/@children.0" flags="2">
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="223,89" size="18,14" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="PersistenceEngine" location="0,82" id="{UMLID=_gToLgNYNEeKeiO3ldqh1qQ}" multiplicityLabel="//@children.2/@sourceConnections.0/@children.1/@children.0" roleLabel="//@children.2/@sourceConnections.0/@children.1/@children.1" navigable="true" flags="2">
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="521,117" size="18,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="- PersistenceEngine" location="443,89" size="96,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+      </children>
+      <children xsi:type="editmodel:WireLabelEditModel" name="PersistenceEngine" size="89,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showMethods="true" showAttributes="true" showLiterals="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.0 //@children.2/@sourceConnections.0" name="Serializer" location="546,28" size="148,152" timstampe="314" stereotype="" id="{UMLID=_LB-lENYIEeKeiO3ldqh1qQ,JavaID=/Serializer}" runTimeClassModel="Compare(),Save(),Delete(),Get(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel">
+      <children xsi:type="editmodel:AttributeEditModel" name="thePersistant" size="98,21" id="{UMLID=_gToykNYNEeKeiO3ldqh1qQ}"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="104,72">
+      <children xsi:type="editmodel:MethodEditModel" name="Get" size="78,16" id="{UMLID=_VQ0-sNYIEeKeiO3ldqh1qQ,JavaID=/Serializer#Get(Ljava.lang.String;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Save" size="104,16" id="{UMLID=_XTTz0dYIEeKeiO3ldqh1qQ,JavaID=/Serializer#Save()}"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showMethods="true" showAttributes="true" showLiterals="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ObjSerializer" location="672,238" size="167,137" timstampe="710" stereotype="" id="{UMLID=_i9T80NYIEeKeiO3ldqh1qQ,JavaID=/ObjSerializer}" runTimeClassModel="Compare(),Save(),Delete(),Get(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="104,72">
+      <children xsi:type="editmodel:MethodEditModel" name="Get" size="78,16" id="{UMLID=_mcxtUNYIEeKeiO3ldqh1qQ,JavaID=/ObjSerializer#Get(Ljava.lang.String;)}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Compare" size="104,16" id="{UMLID=_mc0JkNYIEeKeiO3ldqh1qQ,JavaID=/ObjSerializer#Compare()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Save" size="86,16" id="{UMLID=_z-2D0NYLEeKeiO3ldqh1qQ,JavaID=/ObjSerializer#Save()}"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Delete" size="91,16" id="{UMLID=_z-8KcdYLEeKeiO3ldqh1qQ,JavaID=/ObjSerializer#Delete()}"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" size="2,1" description="Generalization" autoLocated="true" id="{UMLID=_k9FcMNYIEeKeiO3ldqh1qQ}" source="//@children.4" target="//@children.3" targetEnd="//@children.4/@sourceConnections.0/@children.1" sourceEnd="//@children.4/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="10,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="136,152"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showMethods="true" showAttributes="true" showLiterals="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=1" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="14,14" gridOrigin="896,196" rulerUnit="cm" gridShow="true">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" attributeSorter="Natural" methodSorter="Natural" shortPackageNameFormat="true" showClassStereotype="true" showPackageStereotype="true" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showInterfaceStereotype="true" showMethods="true" showAttributes="true" showLiterlas="true" showInnerEntity="true"/>
+</editmodel:ClassDiagramEditModel>

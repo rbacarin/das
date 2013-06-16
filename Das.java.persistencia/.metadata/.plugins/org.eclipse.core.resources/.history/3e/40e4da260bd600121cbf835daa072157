@@ -1,0 +1,7 @@
+
+public abstract class Serializer {
+	public abstract boolean Save(Object save);
+	public abstract Object Get(String key);
+	public abstract boolean Delete(Object key);
+	public abstract boolean Compare(Object a, Object b);
+}

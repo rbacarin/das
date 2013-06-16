@@ -1,0 +1,22 @@
+
+public class ThePersistant extends IPersistence {
+
+	@Override
+	public Object boolean Delete(Object key) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Object Get(String key) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean Save(Object value) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

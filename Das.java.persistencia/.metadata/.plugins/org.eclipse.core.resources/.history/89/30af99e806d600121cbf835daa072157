@@ -1,0 +1,8 @@
+	public interface IPersistence {
+
+		<T> boolean Save(T value);
+		
+		<T> T Get(String key);
+
+		<T> boolean Delete(T key);
+	}

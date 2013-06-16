@@ -1,0 +1,36 @@
+	public abstract class Serializer {
+		/*
+		 * (non-javadoc)
+		 */
+		private ThePersistant thePersistant;
+
+		public abstract <T> boolean Save(T save);
+
+		public abstract <T> T Get(String key);
+
+		public abstract <T> boolean Delete(T value);
+
+		public abstract <T> boolean Compare(T a, T b);
+
+		/**
+		 * Getter of the property <tt>thePersistant</tt>
+		 * 
+		 * @return Returns the thePersistant.
+		 * 
+		 */
+
+		public ThePersistant getThePersistant() {
+			return thePersistant;
+		}
+
+		/**
+		 * Setter of the property <tt>thePersistant</tt>
+		 * 
+		 * @param thePersistant
+		 *            The thePersistant to set.
+		 * 
+		 */
+		public void setThePersistant(ThePersistant thePersistant) {
+			this.thePersistant = thePersistant;
+		}
+	}

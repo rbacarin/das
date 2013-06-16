@@ -1,0 +1,75 @@
+	public class ThePersistant extends IPersistence {
+
+		/*
+		 * (non-javadoc)
+		 */
+		private ThePersistant thePersistant2;
+
+		/*
+		 * (non-javadoc)
+		 */
+		private ThePersistant thePersistant1;
+
+		@Override
+		public <T> boolean Delete(T key) {
+			// TODO Auto-generated method stub
+			return false;
+		}
+
+		@Override
+		public <T> T Get(String key) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		@Override
+		public <T> boolean Save(T value) {
+			// TODO Auto-generated method stub
+			return false;
+		}
+
+		/**
+		 * Getter of the property <tt>thePersistant1</tt>
+		 * 
+		 * @return Returns the thePersistant1.
+		 * 
+		 */
+
+		public ThePersistant getThePersistant1() {
+			return thePersistant1;
+		}
+
+		/**
+		 * Setter of the property <tt>thePersistant1</tt>
+		 * 
+		 * @param thePersistant1
+		 *            The thePersistant1 to set.
+		 * 
+		 */
+		public void setThePersistant1(ThePersistant thePersistant1) {
+			this.thePersistant1 = thePersistant1;
+		}
+
+		/**
+		 * Getter of the property <tt>thePersistant2</tt>
+		 * 
+		 * @return Returns the thePersistant2.
+		 * 
+		 */
+
+		public ThePersistant getThePersistant2() {
+			return thePersistant2;
+		}
+
+		/**
+		 * Setter of the property <tt>thePersistant2</tt>
+		 * 
+		 * @param thePersistant2
+		 *            The thePersistant2 to set.
+		 * 
+		 */
+		public void setThePersistant2(ThePersistant thePersistant2) {
+			this.thePersistant2 = thePersistant2;
+		}
+
+	}

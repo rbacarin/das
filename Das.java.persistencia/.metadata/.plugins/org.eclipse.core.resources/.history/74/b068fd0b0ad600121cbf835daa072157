@@ -1,0 +1,25 @@
+	public class ObjSerializer extends Serializer {
+		@Override
+		public boolean Compare(Object a, Object b) {
+			return a.hashCode() == b.hashCode();
+		}
+
+		@Override
+		public boolean Delete(Object key) {
+			// TODO Auto-generated method stub
+			return false;
+		}
+
+		@Override
+		public Object Get(String key) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		@Override
+		public boolean Save(Object save) {
+			// TODO Auto-generated method stub
+			return false;
+		}
+
+	}

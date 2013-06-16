@@ -1,0 +1,10 @@
+	public interface IPersistence {
+
+		public <T> boolean Save(T value);
+		
+		public <T> T Get(String key);
+
+		//public abstract<T> boolean Delete(T key);
+		
+		//
+	}
