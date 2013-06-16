@@ -1,0 +1,9 @@
+c:\users\robson.abacarin\documents\visual studio 2010\Projects\Das.Persistencia\Das.Persistencia\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\robson.abacarin\documents\visual studio 2010\Projects\Das.Persistencia\Das.Persistencia\bin\Debug\Das.Persistencia.exe
+c:\users\robson.abacarin\documents\visual studio 2010\Projects\Das.Persistencia\Das.Persistencia\bin\Debug\Das.Persistencia.pdb
+c:\users\robson.abacarin\documents\visual studio 2010\Projects\Das.Persistencia\Das.Persistencia\obj\x86\Debug\Das.Persistencia.exe
+c:\users\robson.abacarin\documents\visual studio 2010\Projects\Das.Persistencia\Das.Persistencia\obj\x86\Debug\Das.Persistencia.pdb
+C:\Users\Robson\Google Drive\Pos-graduacao\DAS\Das.Persistencia\Das.Persistencia\obj\x86\Debug\Das.Persistencia.exe
+C:\Users\Robson\Google Drive\Pos-graduacao\DAS\Das.Persistencia\Das.Persistencia\obj\x86\Debug\Das.Persistencia.pdb
+C:\Users\Robson\Google Drive\Pos-graduacao\DAS\Das.Persistencia\Das.Persistencia\bin\Debug\Das.Persistencia.exe
+C:\Users\Robson\Google Drive\Pos-graduacao\DAS\Das.Persistencia\Das.Persistencia\bin\Debug\Das.Persistencia.pdb
