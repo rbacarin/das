@@ -1,0 +1,124 @@
+import java.io.*;
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.xml.StaxDriver;
+
+	public class ObjSerializer extends Serializer {
+	
+		public <T> ArrayList<T> GetAll(String ClassName) {
+			return Get(ClassName,"");
+		}
+		
+		/**
+		 * 
+		 * @param ClassName Class do objeto (Define o nome do arquivo)
+		 * @param key Identificador do objeto buscado
+		 * @return
+		 */
+		@SuppressWarnings("unchecked")
+		public <T> T Get(String ClassName, String key) {
+			T fromXML = null;
+			try
+		      {
+				File file = new File(ClassName+".ser");
+				file.createNewFile();
+
+			      XStream xStream = new XStream();
+			      FileReader ff = new FileReader(ClassName + ".ser");
+			      try {
+				      Object obj = xStream.fromXML(ff);
+				      if(obj != null)
+				    	  fromXML = (T)obj;
+				} catch (Exception e) {
+					return null;
+				}
+
+					
+		      }catch(IOException i)
+		      {
+		         i.printStackTrace();
+		         return null;
+		      }
+		      
+		      if("" == key)
+		    	  return fromXML;
+		      else{
+		    	  for (T element : (ArrayList<T>)fromXML) {
+		    		  Field[] f = element.getClass().getFields();
+		    		  for (Field _field : f) {
+						try {
+							if(_field.getType().getName() == "java.lang.String"){
+								if(((String)_field.get(element)) == key)
+									return element;
+							}
+							if(_field.getType().getName() == "int" && key.getClass().getName() != "java.lang.String"){
+								if(Integer.parseInt(_field.get(element).toString()) == Integer.parseInt(key))
+									return element;
+							}
+						} catch (IllegalArgumentException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (IllegalAccessException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					}
+		    	  }					
+				}
+		      return null;
+		}
+		
+		@Override
+		public <T> boolean Save(T save) {
+			try
+			{
+				ArrayList<T> myList = Get(save.getClass().getName(), "");
+				if(myList == null || myList.size() == 0)
+					myList = new ArrayList<T>();
+				boolean canotAdd = true;
+				for (T t : myList) {
+					if(canotAdd = Compare(t, save))
+						break;
+				}
+				if(!canotAdd)
+					myList.add(save);
+				
+				String filename = save.getClass().getName() + ".ser";
+				FileWriter f = new FileWriter(filename);
+				XStream xStream = new XStream(new StaxDriver());
+				String theXML = xStream.toXML(myList);
+				f.write(theXML);
+				f.close();
+				
+			}
+			catch(IOException i)
+			{
+				i.printStackTrace();
+				return false;
+			}
+			
+			return true;
+		}
+		
+		@Override
+		public <T> boolean Compare(T a, T b) {
+			XStream xa = new XStream();
+			String Sa = xa.toXML(a);
+			String Sb = xa.toXML(b);
+			return Sa.equals(Sb);
+		}
+
+		@Override
+		public <T> boolean Delete(T value) {
+			String filename = value.getClass().getName() + ".ser";
+			
+			File f = new File(filename);
+			
+			if (f.exists())
+				return f.delete();
+			
+			return false;
+		}
+	}

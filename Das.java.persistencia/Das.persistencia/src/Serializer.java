@@ -1,8 +1,12 @@
+import java.util.ArrayList;
+
 	public abstract class Serializer {
 		
 		public abstract <T> boolean Save(T save);
 
 		public abstract <T> T Get(String ClassName, String key);
+		
+		public abstract <T> ArrayList<T> GetAll(String ClassName);
 
 		public abstract <T> boolean Delete(T value);
 

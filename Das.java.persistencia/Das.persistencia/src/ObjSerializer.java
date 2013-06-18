@@ -1,7 +1,27 @@
 import java.io.*;
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.xml.StaxDriver;
 
 	public class ObjSerializer extends Serializer {
 	
+		/**
+		 * SINGLETON DO GERADOR DE XML
+		 */
+		XStream _xStream;
+		private XStream GetxStream()
+		{
+			if(_xStream == null)
+					_xStream = new XStream();
+			return _xStream;
+			
+		}
+		
+		public <T> ArrayList<T> GetAll(String ClassName) {
+			return Get(ClassName,"");
+		}
+		
 		/**
 		 * 
 		 * @param ClassName Class do objeto (Define o nome do arquivo)
@@ -10,48 +30,79 @@ import java.io.*;
 		 */
 		@SuppressWarnings("unchecked")
 		public <T> T Get(String ClassName, String key) {
-			T o=null;
-			 
+			T fromXML = null;
 			try
 		      {
 				File file = new File(ClassName+".ser");
-				 
-			      if (file.createNewFile()){
-			        System.out.println("File is created!");
-			      }else{
-			        System.out.println("File already exists.");
-			      }
-				
-		         FileInputStream fileIn = new FileInputStream(ClassName+".ser");
-		         ObjectInputStream in = new ObjectInputStream(fileIn);
-		         o = (T) in.readObject();
-		         in.close();
-		         fileIn.close();
+				file.createNewFile();
+
+			      
+			      FileReader ff = new FileReader(ClassName + ".ser");
+			      try {
+				      Object obj = GetxStream().fromXML(ff);
+				      if(obj != null)
+				    	  fromXML = (T)obj;
+				} catch (Exception e) {
+					return null;
+				}
+
+					
 		      }catch(IOException i)
 		      {
 		         i.printStackTrace();
 		         return null;
-		      }catch(ClassNotFoundException c)
-		      {
-		         System.out.println("Employee class not found");
-		         c.printStackTrace();
-		         return null;
 		      }
 		      
-		      return o;
+		      if("" == key)
+		    	  return fromXML;
+		      else{
+		    	  for (T element : (ArrayList<T>)fromXML) {
+		    		  for (Field field : element.getClass().getDeclaredFields()) {
+		    			    field.setAccessible(true); // You might want to set modifier to public first.
+		    			    Object value = null;
+							try {
+								value = field.get(element);
+							} catch (IllegalArgumentException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							} catch (IllegalAccessException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							} 
+		    			    if (value != null) {
+		    			    	if(key.equals(value))
+		    			    		return element;		    			    	
+		    			    }
+		    			}
+					}
+		    	  }					
+				
+		      return null;
 		}
 		
-
 		@Override
 		public <T> boolean Save(T save) {
 			try
 			{
+				ArrayList<T> myList = Get(save.getClass().getName(), "");
+				if(myList == null)
+					myList = new ArrayList<T>();
+				boolean canAdd = true;
+				for (T t : myList) {
+					if(Compare(t, save)){
+						canAdd = false;
+						break;						
+					}
+				}
+				if(canAdd)
+					myList.add(save);
+				
 				String filename = save.getClass().getName() + ".ser";
-				FileOutputStream fileOut = new FileOutputStream(filename);
-				ObjectOutputStream out = new ObjectOutputStream(fileOut);
-				out.writeObject(save);
-				out.close();
-				fileOut.close();
+				FileWriter f = new FileWriter(filename);
+				String theXML = GetxStream().toXML(myList);
+				f.write(theXML);
+				f.close();
+				
 			}
 			catch(IOException i)
 			{
@@ -61,17 +112,13 @@ import java.io.*;
 			
 			return true;
 		}
-
-
-		
 		
 		@Override
 		public <T> boolean Compare(T a, T b) {
-			return a.hashCode() == b.hashCode();
+			String Sa = GetxStream().toXML(a);
+			String Sb = GetxStream().toXML(b);
+			return Sa.equals(Sb);
 		}
-		
-		
-
 
 		@Override
 		public <T> boolean Delete(T value) {

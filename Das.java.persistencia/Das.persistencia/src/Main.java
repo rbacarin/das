@@ -1,19 +1,28 @@
-
+import java.util.ArrayList;
 
 public class Main {
 	public static int RAGen = 1;
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception{ 
 		
 		ObjSerializer o = new ObjSerializer();
 		ThePersistant tp = new ThePersistant(o);
-		Aluno alunoInst = new Aluno("Robson", RAGen++);
+		Aluno alunoInst = new Aluno("Robson",65);
+		Aluno alunoInst2 = new Aluno("Fred",66);
+		Aluno alunoInst3 = new Aluno("Cristiano",67);
 		tp.Save(alunoInst);
+		tp.Save(alunoInst2);
+		tp.Save(alunoInst3);
+			
+		Aluno a = tp.Get("Aluno","Fred");
+		System.out.println(a.nomeAluno);
 		
-		Aluno alunoRecuperado = tp.Get("Aluno", String.valueOf(alunoInst.RA));
-		System.out.println(alunoRecuperado.nomeAluno);
+		ArrayList<Aluno> all = tp.GetAll("Aluno");
+		for (Aluno aluno : all) {
+			System.out.println(aluno.nomeAluno);
+		}
 	}
 
 	

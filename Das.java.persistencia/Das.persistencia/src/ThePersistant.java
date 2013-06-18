@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 	public class ThePersistant extends IPersistence {
 
 		private Serializer PersistenceEngine;
@@ -18,6 +20,10 @@
 		@Override
 		public <T> T Get(String className, String key) {
 			return PersistenceEngine.Get(className,key);
+		}
+		
+		public <T> ArrayList<T> GetAll(String className) {
+			return PersistenceEngine.GetAll(className);
 		}
 
 		@Override
