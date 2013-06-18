@@ -7,5 +7,13 @@
 <fullyQualifiedTypeName name="java.lang.Object"/>
 <fullyQualifiedTypeName name="java.io.FileInputStream"/>
 <fullyQualifiedTypeName name="java.io.ObjectInputStream"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="Aluno"/>
+<fullyQualifiedTypeName name="ThePersistant"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
 <fullyQualifiedTypeName name="ObjSerializer"/>
+<fullyQualifiedTypeName name="com.thoughtworks.xstream.converters.reflection.ReflectionProvider"/>
+<fullyQualifiedTypeName name="com.thoughtworks.xstream.io.xml.StaxDriver"/>
+<fullyQualifiedTypeName name="com.thoughtworks.xstream.XStream"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>
