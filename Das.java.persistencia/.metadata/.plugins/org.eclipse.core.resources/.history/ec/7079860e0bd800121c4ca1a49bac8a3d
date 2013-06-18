@@ -1,0 +1,9 @@
+import java.util.ArrayList;
+
+
+public class CareTaker {
+	   private ArrayList<Memento> savedStates = new ArrayList<Memento>();
+
+	   public void AddMemento(Memento m) { savedStates.add(m); }
+	   public Memento GetMemento(int index) { return savedStates.get(index); }
+	}

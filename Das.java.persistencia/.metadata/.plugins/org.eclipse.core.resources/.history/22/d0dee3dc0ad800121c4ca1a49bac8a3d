@@ -1,0 +1,6 @@
+public class Memento {
+   private Object state;
+
+   public Memento(Object stateToSave) { state = stateToSave; }
+   public Object getSavedState() { return state; }
+}

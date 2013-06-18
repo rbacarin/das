@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Encapsulate field &apos;Memento.Key&apos; in &apos;Memento&apos;&#x0D;&#x0A;- Original project: &apos;Das.persistencia&apos;&#x0D;&#x0A;- Original element: &apos;Memento.Key&apos;&#x0D;&#x0A;- Getter method name: &apos;getKey&apos;&#x0D;&#x0A;- Setter method name: &apos;setKey&apos;&#x0D;&#x0A;- Field visibility: &apos;public&apos;&#x0D;&#x0A;- Use getter and setter methods in declaring type" comments="false" declaring="true" description="Encapsulate field &apos;Key&apos;" flags="589830" getter="getKey" id="org.eclipse.jdt.ui.self.encapsulate" input="/src&lt;{Memento.java[Memento^Key" insertion="1" setter="setKey" stamp="1371555182138" version="1.0" visibility="1"/>
+</session>

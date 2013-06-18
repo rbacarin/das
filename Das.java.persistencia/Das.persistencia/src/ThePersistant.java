@@ -5,7 +5,7 @@ import java.util.ArrayList;
 		private Serializer PersistenceEngine;
 
 		public ThePersistant() {
-			this.PersistenceEngine = new ObjSerializer();
+			this.PersistenceEngine = new ObjSerializertoXML();
 		}
 		
 		public ThePersistant(Serializer engine){

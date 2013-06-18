@@ -1,13 +1,23 @@
 import java.io.*;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
-
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.StaxDriver;
 
-	public class ObjSerializer extends Serializer {
+	public class ObjSerializertoXML extends Serializer {
 	
-		@SuppressWarnings("unchecked")
+		/**
+		 * SINGLETON DO GERADOR DE XML
+		 */
+		XStream _xStream;
+		private XStream GetxStream()
+		{
+			if(_xStream == null)
+					_xStream = new XStream();
+			return _xStream;
+			
+		}
+		
 		public <T> ArrayList<T> GetAll(String ClassName) {
 			return Get(ClassName,"");
 		}
@@ -20,22 +30,22 @@ import com.thoughtworks.xstream.io.xml.StaxDriver;
 		 */
 		@SuppressWarnings("unchecked")
 		public <T> T Get(String ClassName, String key) {
-			T o=null;
-			ArrayList<T> fromXML = null;
+			T fromXML = null;
 			try
 		      {
 				File file = new File(ClassName+".ser");
-				 
-			      if (file.createNewFile()){
-			        System.out.println("File is created!");
-			      }else{
-			        System.out.println("File already exists.");
-			      }
-			      XStream xStream = new XStream();
+				file.createNewFile();
+
+			      
 			      FileReader ff = new FileReader(ClassName + ".ser");
-			      Object obj = xStream.fromXML(ff);
-			      if(objc != null)
-			    	  fromXML = (ArrayList<T>)obj;
+			      try {
+				      Object obj = GetxStream().fromXML(ff);
+				      if(obj != null)
+				    	  fromXML = (T)obj;
+				} catch (Exception e) {
+					return null;
+				}
+
 					
 		      }catch(IOException i)
 		      {
@@ -44,46 +54,52 @@ import com.thoughtworks.xstream.io.xml.StaxDriver;
 		      }
 		      
 		      if("" == key)
-		    	  return o;
+		    	  return fromXML;
 		      else{
 		    	  for (T element : (ArrayList<T>)fromXML) {
-		    		  Field[] f = element.getClass().getFields();
-		    		  for (Field _field : f) {
-						try {
-							if(_field.getType().getName() == "java.lang.String"){
-								if(((String)_field.get(element)) == key)
-									return element;
-							}
-							if(_field.getType().getName() == "int" && key.getClass().getName() != "java.lang.String"){
-								if(Integer.parseInt(_field.get(element).toString()) == Integer.parseInt(key))
-									return element;
-							}
-						} catch (IllegalArgumentException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						} catch (IllegalAccessException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
+		    		  for (Field field : element.getClass().getDeclaredFields()) {
+		    			    field.setAccessible(true); // You might want to set modifier to public first.
+		    			    Object value = null;
+							try {
+								value = field.get(element);
+							} catch (IllegalArgumentException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							} catch (IllegalAccessException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							} 
+		    			    if (value != null) {
+		    			    	if(key.equals(value))
+		    			    		return element;		    			    	
+		    			    }
+		    			}
 					}
 		    	  }					
-				}
+				
 		      return null;
 		}
 		
-
 		@Override
 		public <T> boolean Save(T save) {
 			try
 			{
 				ArrayList<T> myList = Get(save.getClass().getName(), "");
 				if(myList == null)
-					myList = new ArrayList<T>();	
-				myList.add(save);
+					myList = new ArrayList<T>();
+				boolean canAdd = true;
+				for (T t : myList) {
+					if(Compare(t, save)){
+						canAdd = false;
+						break;						
+					}
+				}
+				if(canAdd)
+					myList.add(save);
+				
 				String filename = save.getClass().getName() + ".ser";
 				FileWriter f = new FileWriter(filename);
-				XStream xStream = new XStream(new StaxDriver());
-				String theXML = xStream.toXML(myList);
+				String theXML = GetxStream().toXML(myList);
 				f.write(theXML);
 				f.close();
 				
@@ -96,17 +112,13 @@ import com.thoughtworks.xstream.io.xml.StaxDriver;
 			
 			return true;
 		}
-
-
-		
 		
 		@Override
 		public <T> boolean Compare(T a, T b) {
-			return a.hashCode() == b.hashCode();
+			String Sa = GetxStream().toXML(a);
+			String Sb = GetxStream().toXML(b);
+			return Sa.equals(Sb);
 		}
-		
-		
-
 
 		@Override
 		public <T> boolean Delete(T value) {

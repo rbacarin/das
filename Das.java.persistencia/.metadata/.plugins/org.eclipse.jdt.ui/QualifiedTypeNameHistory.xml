@@ -16,4 +16,6 @@
 <fullyQualifiedTypeName name="com.thoughtworks.xstream.io.xml.StaxDriver"/>
 <fullyQualifiedTypeName name="com.thoughtworks.xstream.XStream"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="Originator"/>
+<fullyQualifiedTypeName name="CareTaker"/>
 </qualifiedTypeNameHistroy>
